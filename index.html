@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Lucía Macías - Escritora. Descubre 'Única entre las estrellas' y más obras de prosa poética.">
+  <title>Lucía Macías | Escritora</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* ========================================
+       VARIABLES Y RESET
+    ======================================== */
+    :root {
+      --color-bg-primary: #0f0a1a;
+      --color-bg-secondary: #1a1225;
+      --color-bg-card: #251a35;
+      --color-text-primary: #ffffff;
+      --color-text-secondary: #c8b8d2;
+      --color-text-muted: #8b7394;
+      --color-accent: #a855f7;
+      --color-accent-hover: #c084fc;
+      --color-accent-glow: rgba(168, 85, 247, 0.3);
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Inter', system-ui, sans-serif;
+      --transition-fast: 0.2s ease;
+      --transition-medium: 0.3s ease;
+    }
+
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--color-bg-primary);
+      color: var(--color-text-primary);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    /* ========================================
+       FONDO ESTRELLADO
+    ======================================== */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        radial-gradient(2px 2px at 20px 30px, rgba(255,255,255,0.3), transparent),
+        radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.2), transparent),
+        radial-gradient(1px 1px at 90px 40px, rgba(255,255,255,0.4), transparent),
+        radial-gradient(2px 2px at 160px 120px, rgba(255,255,255,0.3), transparent),
+        radial-gradient(1px 1px at 230px 80px, rgba(255,255,255,0.2), transparent),
+        radial-gradient(2px 2px at 300px 150px, rgba(255,255,255,0.35), transparent),
+        radial-gradient(1px 1px at 400px 60px, rgba(255,255,255,0.25), transparent),
+        radial-gradient(2px 2px at 500px 200px, rgba(255,255,255,0.3), transparent),
+        radial-gradient(1px 1px at 600px 100px, rgba(255,255,255,0.2), transparent),
+        radial-gradient(2px 2px at 700px 250px, rgba(255,255,255,0.4), transparent),
+        radial-gradient(1px 1px at 800px 50px, rgba(255,255,255,0.3), transparent),
+        radial-gradient(2px 2px at 900px 180px, rgba(255,255,255,0.25), transparent),
+        radial-gradient(1px 1px at 150px 300px, rgba(255,255,255,0.3), transparent),
+        radial-gradient(2px 2px at 350px 350px, rgba(255,255,255,0.2), transparent),
+        radial-gradient(1px 1px at 550px 400px, rgba(255,255,255,0.35), transparent),
+        radial-gradient(2px 2px at 750px 380px, rgba(255,255,255,0.3), transparent);
+      background-repeat: repeat;
+      background-size: 1000px 500px;
+      pointer-events: none;
+      z-index: -1;
+      animation: twinkle 8s ease-in-out infinite alternate;
+    }
+
+    @keyframes twinkle {
+      0% { opacity: 0.6; }
+      100% { opacity: 1; }
+    }
+
+    /* ========================================
+       CONTENEDOR PRINCIPAL
+    ======================================== */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* ========================================
+       HEADER Y NAVEGACIÓN
+    ======================================== */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: linear-gradient(to bottom, var(--color-bg-primary), transparent);
+      padding: 1.5rem 0;
+    }
+
+    .header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .logo span {
+      color: var(--color-accent);
+    }
+
+    .nav-menu {
+      display: flex;
+      gap: 2.5rem;
+    }
+
+    .nav-link {
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: var(--color-text-secondary);
+      transition: color var(--transition-fast);
+      position: relative;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background-color: var(--color-accent);
+      transition: width var(--transition-medium);
+    }
+
+    .nav-link:hover {
+      color: var(--color-text-primary);
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    /* ========================================
+       SECCIÓN SOBRE LA AUTORA (HERO)
+    ======================================== */
+    .about {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 8rem 0 4rem;
+    }
+
+    .about .container {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .about-image-wrapper {
+      display: flex;
+      justify-content: center;
+    }
+
+    .about-image {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: linear-gradient(145deg, var(--color-bg-card), var(--color-bg-secondary));
+      border: 3px solid var(--color-accent-glow);
+      box-shadow: 0 0 60px var(--color-accent-glow);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-image::before {
+      content: '';
+      position: absolute;
+      width: 80%;
+      height: 80%;
+      background: radial-gradient(circle, rgba(168, 85, 247, 0.1), transparent 70%);
+    }
+
+    .about-image-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: relative;
+      z-index: 1;
+    }
+
+    .about-image-placeholder {
+      font-family: var(--font-serif);
+      font-size: 4rem;
+      font-weight: 600;
+      color: var(--color-accent);
+      opacity: 0.5;
+    }
+
+    .about-content {
+      max-width: 520px;
+    }
+
+    .about-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: 0.75rem;
+    }
+
+    .about-title {
+      font-family: var(--font-serif);
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-text {
+      color: var(--color-text-secondary);
+      line-height: 1.9;
+      margin-bottom: 1.25rem;
+    }
+
+    .about-text:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .about-highlight {
+      color: var(--color-accent);
+      font-weight: 500;
+    }
+
+    /* Botones de redes sociales */
+    .social-buttons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .social-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      border: 2px solid var(--color-accent);
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--color-accent);
+      background: transparent;
+      transition: all var(--transition-medium);
+    }
+
+    .social-btn:hover {
+      background: var(--color-accent);
+      color: var(--color-bg-primary);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 20px var(--color-accent-glow);
+    }
+
+    .social-btn svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    /* ========================================
+       SECCIÓN CONTACTO
+    ======================================== */
+    .contact {
+      padding: 5rem 0;
+      background: var(--color-bg-secondary);
+    }
+
+    .contact .container {
+      text-align: center;
+      max-width: 600px;
+    }
+
+    .contact-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: 0.75rem;
+    }
+
+    .contact-title {
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .contact-text {
+      color: var(--color-text-secondary);
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-email {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1rem 2rem;
+      background: var(--color-bg-card);
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--color-accent);
+      transition: all var(--transition-medium);
+    }
+
+    .contact-email:hover {
+      background: var(--color-accent);
+      color: var(--color-bg-primary);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 20px var(--color-accent-glow);
+    }
+
+    .contact-email svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .section-divider {
+      height: 2px;
+      width: min(1200px, calc(100% - 3rem));
+      margin: 0 auto;
+      background: linear-gradient(
+        to right,
+        transparent,
+        rgba(168, 85, 247, 0.85),
+        transparent
+      );
+      box-shadow: 0 0 12px rgba(168, 85, 247, 0.45);
+    }
+
+    /* ========================================
+       SECCIÓN CATÁLOGO
+    ======================================== */
+    .catalog {
+      padding: 6rem 0;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .section-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: 2.5rem;
+      font-weight: 600;
+    }
+
+    .books-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .book-card {
+      background: var(--color-bg-card);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: transform var(--transition-medium), box-shadow var(--transition-medium);
+    }
+
+    .book-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .book-card-cover {
+      aspect-ratio: 6 / 7;
+      background: linear-gradient(145deg, #2d1f4a, #1a0f2e);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .book-card-cover::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 50% 30%, rgba(168, 85, 247, 0.1), transparent 60%);
+      z-index: 1;
+    }
+
+    .book-card-cover-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+
+    .book-card-cover-title {
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      font-weight: 600;
+      line-height: 1.3;
+      position: relative;
+      z-index: 1;
+    }
+
+    .book-card-cover-author {
+      font-size: 0.75rem;
+      color: var(--color-accent);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-top: 0.75rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .book-card-body {
+      padding: 1.5rem;
+    }
+
+    .book-card-title {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .book-card-genre {
+      font-size: 0.8rem;
+      color: var(--color-text-muted);
+      margin-bottom: 1rem;
+    }
+
+    .book-card-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      padding: 0.7rem 1.2rem;
+      border: 1px solid rgba(168, 85, 247, 0.5);
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      color: #f4e9ff;
+      background: linear-gradient(135deg, rgba(168, 85, 247, 0.28), rgba(40, 24, 63, 0.95));
+      box-shadow: 0 10px 22px rgba(5, 2, 10, 0.45), 0 0 18px rgba(168, 85, 247, 0.25) inset;
+      cursor: pointer;
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast), gap var(--transition-fast), border-color var(--transition-fast);
+    }
+
+    .book-card-link:hover {
+      gap: 0.75rem;
+      transform: translateY(-2px);
+      border-color: rgba(192, 132, 252, 0.85);
+      box-shadow: 0 14px 26px rgba(5, 2, 10, 0.5), 0 0 24px rgba(192, 132, 252, 0.35) inset;
+    }
+
+    .book-card-link:focus-visible {
+      outline: 2px solid rgba(192, 132, 252, 0.9);
+      outline-offset: 2px;
+    }
+
+    .book-card-link svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .book-modal {
+      position: fixed;
+      inset: 0;
+      display: none;
+      place-items: center;
+      background: rgba(10, 6, 16, 0.82);
+      backdrop-filter: blur(6px);
+      padding: 1.25rem;
+      z-index: 200;
+    }
+
+    .book-modal.is-open {
+      display: grid;
+    }
+
+    .book-modal-panel {
+      width: min(720px, 100%);
+      max-height: 90vh;
+      overflow-y: auto;
+      border-radius: 20px;
+      border: 1px solid rgba(168, 85, 247, 0.35);
+      background: linear-gradient(145deg, rgba(37, 26, 53, 0.98), rgba(20, 13, 33, 0.98));
+      box-shadow: 0 28px 50px rgba(0, 0, 0, 0.5), 0 0 26px rgba(168, 85, 247, 0.25);
+    }
+
+    .book-modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1.5rem 1.5rem 1rem;
+    }
+
+    .book-modal-tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .book-modal-title {
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      line-height: 1.1;
+    }
+
+    .book-modal-close {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      border: 1px solid rgba(168, 85, 247, 0.45);
+      border-radius: 999px;
+      background: rgba(21, 14, 33, 0.85);
+      color: var(--color-text-primary);
+      font-size: 1.25rem;
+      line-height: 1;
+      cursor: pointer;
+      transition: background var(--transition-fast), transform var(--transition-fast), border-color var(--transition-fast);
+    }
+
+    .book-modal-close:hover {
+      background: rgba(168, 85, 247, 0.18);
+      border-color: rgba(192, 132, 252, 0.8);
+      transform: translateY(-1px);
+    }
+
+    .book-modal-body {
+      padding: 0 1.5rem 1.5rem;
+    }
+
+    .book-modal-media {
+      width: min(280px, calc(100% - 3rem));
+      margin: 0 auto 1.25rem;
+      padding: 0.35rem;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(168, 85, 247, 0.35);
+      background: linear-gradient(150deg, rgba(168, 85, 247, 0.2), rgba(32, 21, 47, 0.9));
+      box-shadow: 0 14px 26px rgba(0, 0, 0, 0.4);
+    }
+
+    .book-modal-image {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      height: auto;
+      object-fit: cover;
+      display: block;
+      border-radius: 14px;
+    }
+
+    .book-modal-text {
+      color: var(--color-text-secondary);
+      line-height: 1.85;
+      margin-bottom: 1rem;
+    }
+
+    .book-modal-text:last-of-type {
+      margin-bottom: 1.5rem;
+    }
+
+    .book-modal-actions {
+      display: flex;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+    }
+
+    .book-modal-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem 1.15rem;
+      border-radius: 999px;
+      border: 1px solid rgba(168, 85, 247, 0.5);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast), color var(--transition-fast);
+    }
+
+    .book-modal-btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .book-modal-btn--primary {
+      background: var(--color-accent);
+      color: var(--color-bg-primary);
+      box-shadow: 0 8px 20px rgba(168, 85, 247, 0.3);
+    }
+
+    .book-modal-btn--primary:hover {
+      background: var(--color-accent-hover);
+      box-shadow: 0 10px 24px rgba(192, 132, 252, 0.35);
+    }
+
+    .book-modal-btn--secondary {
+      background: rgba(22, 15, 35, 0.8);
+      color: var(--color-text-primary);
+    }
+
+    .book-modal-btn--secondary:hover {
+      background: rgba(168, 85, 247, 0.18);
+    }
+
+    /* Tarjetas "Próximamente" */
+    .book-card--coming-soon {
+      opacity: 0.6;
+    }
+
+    .book-card--coming-soon .book-card-cover {
+      background: linear-gradient(145deg, #1f1530, #120a1c);
+    }
+
+    .book-card--coming-soon .book-card-cover::after {
+      content: 'Próximamente';
+      position: absolute;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+    }
+
+    .book-card--coming-soon .book-card-cover-title,
+    .book-card--coming-soon .book-card-cover-author {
+      display: none;
+    }
+
+    .book-card--coming-soon .book-card-body {
+      text-align: center;
+    }
+
+    .book-card--coming-soon .book-card-title {
+      color: var(--color-text-muted);
+    }
+
+    /* ========================================
+       FOOTER
+    ======================================== */
+    .footer {
+      padding: 3rem 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      background: var(--color-bg-secondary);
+    }
+
+    .footer .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-copy {
+      font-size: 0.85rem;
+      color: var(--color-text-muted);
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .social-link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--color-bg-card);
+      color: var(--color-text-secondary);
+      transition: all var(--transition-fast);
+    }
+
+    .social-link:hover {
+      background: var(--color-accent);
+      color: var(--color-bg-primary);
+      transform: translateY(-2px);
+    }
+
+    .social-link svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    /* ========================================
+       RESPONSIVE
+    ======================================== */
+    @media (max-width: 900px) {
+      .about .container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 3rem;
+      }
+
+      .about-content {
+        max-width: 100%;
+      }
+
+      .about-image {
+        width: 250px;
+        height: 250px;
+      }
+
+      .social-buttons {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .header .container {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .nav-menu {
+        gap: 1.5rem;
+      }
+
+      .about {
+        padding: 7rem 0 3rem;
+      }
+
+      .about-title {
+        font-size: 2rem;
+      }
+
+      .section-title {
+        font-size: 2rem;
+      }
+
+      .contact-title {
+        font-size: 1.75rem;
+      }
+
+      .book-modal-title {
+        font-size: 1.65rem;
+      }
+
+      .book-modal-actions {
+        flex-direction: column;
+      }
+
+      .book-modal-btn {
+        width: 100%;
+      }
+
+      .book-modal-media {
+        width: min(240px, 78vw);
+      }
+
+      .footer .container {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- ========== HEADER ========== -->
+  <header class="header">
+    <div class="container">
+      <a href="#" class="logo">Lucía<span>.</span></a>
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="#autora" class="nav-link">Sobre mí</a></li>
+          <li><a href="#contacto" class="nav-link">Contacto</a></li>
+          <li><a href="#libros" class="nav-link">Libros</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========== SECCIÓN SOBRE LA AUTORA (AHORA ES LA PRIMERA) ========== -->
+  <section id="autora" class="about">
+    <div class="container">
+      <div class="about-image-wrapper">
+        <div class="about-image">
+          <img src="Lucia.jpg" alt="Foto de Lucía Macías" class="about-image-photo">
+        </div>
+      </div>
+      <div class="about-content">
+        <span class="about-tag">Escritora</span>
+        <h1 class="about-title">Lucía Macías</h1>
+        <p class="about-text">
+          LUCÍA MACÍAS, nacida el 30 de agosto de 2006 en Extremadura, es una escritora que empezó su camino desde que era pequeña.
+        </p>
+        <p class="about-text">
+          Lleva escribiendo desde que tiene uso de consciencia y siempre ha encontrado en los libros y la escritura un refugio, un lugar en el que puede ser ella misma.
+        </p>
+        <p class="about-text">
+          Aparte de prosa poética, le fascina escribir sobre narrativa juvenil y fantasía. La metáfora y el romance son elementos muy característicos en sus historias.
+        </p>
+        <p class="about-text">
+          Con su sensibilidad y su capacidad para escribir, sentirás la necesidad de que sus historias sean interminables.
+        </p>
+        <p class="about-text">
+          Cada palabra escrita es un reflejo de su alma, y una búsqueda de luz entre las sombras.
+        </p>
+
+        <!-- Botones de redes sociales -->
+        <div class="social-buttons">
+          <a href="#" class="social-btn" target="_blank" rel="noopener noreferrer">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+            Instagram
+          </a>
+          <a href="#" class="social-btn" target="_blank" rel="noopener noreferrer">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 8c0 .557-.447 1.008-1 1.008s-1-.45-1-1.008c0-.557.447-1.008 1-1.008s1 .452 1 1.008zm0 2h-2v6h2v-6zm3 0h-2v6h2v-3.5c0-1.5 2-1.619 2 0v3.5h2v-4.228c0-3.064-3.5-2.991-4-1.472v-.3z"/>
+            </svg>
+            Wattpad
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider" aria-hidden="true"></div>
+
+  <!-- ========== CATÁLOGO DE LIBROS ========== -->
+  <section id="libros" class="catalog">
+    <div class="container">
+      <header class="section-header">
+        <span class="section-tag">Catálogo</span>
+        <h2 class="section-title">Mis libros</h2>
+      </header>
+      <div class="books-grid">
+        <!-- Libro actual -->
+        <article class="book-card">
+          <div class="book-card-cover">
+            <img src="libros.gif" alt="Portada animada del libro" class="book-card-cover-image">
+          </div>
+          <div class="book-card-body">
+            <h3 class="book-card-title">Única entre las estrellas</h3>
+            <p class="book-card-genre">Ficción contemporánea · Prosa poética</p>
+            <button type="button" class="book-card-link js-open-book-modal" aria-haspopup="dialog" aria-controls="book-modal">
+              Ver más
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="16" height="16">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+        </article>
+
+        <!-- Próximamente 1 -->
+        <article class="book-card book-card--coming-soon">
+          <div class="book-card-cover">
+            <h3 class="book-card-cover-title"></h3>
+            <span class="book-card-cover-author"></span>
+          </div>
+          <div class="book-card-body">
+            <h3 class="book-card-title">Nuevo proyecto</h3>
+            <p class="book-card-genre">En desarrollo</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SECCIÓN CONTACTO ========== -->
+  <section id="contacto" class="contact">
+    <div class="container">
+      <span class="contact-tag">Contacto</span>
+      <h2 class="contact-title">¿Quieres escribirme?</h2>
+      <p class="contact-text">
+        Si tienes alguna pregunta, propuesta de colaboración o simplemente quieres saludar, 
+        no dudes en contactarme.
+      </p>
+      <a href="mailto:contacto@luciamacias.com" class="contact-email">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg>
+        contacto@luciamacias.com
+      </a>
+    </div>
+  </section>
+
+  <div class="section-divider" aria-hidden="true"></div>
+
+  <div id="book-modal" class="book-modal" role="dialog" aria-modal="true" aria-labelledby="book-modal-title" aria-hidden="true">
+    <div class="book-modal-panel">
+      <div class="book-modal-header">
+        <div>
+          <span class="book-modal-tag">Sinopsis</span>
+          <h3 id="book-modal-title" class="book-modal-title">Única entre las estrellas</h3>
+        </div>
+        <button type="button" class="book-modal-close" aria-label="Cerrar modal">×</button>
+      </div>
+      <div class="book-modal-media">
+        <img src="libros.gif" alt="Imagen del libro Única entre las estrellas" class="book-modal-image">
+      </div>
+      <div class="book-modal-body">
+        <p class="book-modal-text">
+          A veces, las estrellas más exóticas y que más nos deslumbran son las que más duelen. A través de la metáfora de estrellas, esta historia aborda la dependencia emocional, centrándose cada parte de la historia en una fase diferente de esta. Trata el dolor y el brillo de las estrellas y cómo esos elementos se combinan entre sí.
+        </p>
+        <p class="book-modal-text">
+          Esta historia nos invita a explorar las luces que seguimos, las heridas que nos dejan y el proceso de sanación que, aunque parezca que no llega nunca, al final tiene su línea de meta.
+        </p>
+        <p class="book-modal-text">
+          En un viaje de amor, dolor y, sobre todo, mucho aprendizaje, se revela una verdad esencial: incluso las estrellas fugaces, por efímeras que sean, nos enseñan la importancia de encontrar nuestra propia luz.
+        </p>
+        <p class="book-modal-text">
+          Porque el mayor error es permitir que nuestra luz se apague cada vez más, sin nosotros ser plenamente conscientes de ello.
+        </p>
+        <div class="book-modal-actions">
+          <a href="#" class="book-modal-btn book-modal-btn--primary">Comprar libro</a>
+          <a href="#" class="book-modal-btn book-modal-btn--secondary" target="_blank" rel="noopener noreferrer">Ver en Amazon</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-copy">© 2026 Lucía Macías. Todos los derechos reservados.</p>
+      <div class="footer-social">
+        <a href="#" class="social-link" aria-label="Instagram">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+        </a>
+        <a href="#" class="social-link" aria-label="Wattpad">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 8c0 .557-.447 1.008-1 1.008s-1-.45-1-1.008c0-.557.447-1.008 1-1.008s1 .452 1 1.008zm0 2h-2v6h2v-6zm3 0h-2v6h2v-3.5c0-1.5 2-1.619 2 0v3.5h2v-4.228c0-3.064-3.5-2.991-4-1.472v-.3z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const modal = document.getElementById('book-modal');
+      const openButtons = document.querySelectorAll('.js-open-book-modal');
+      const closeButton = modal ? modal.querySelector('.book-modal-close') : null;
+
+      if (!modal || !closeButton || openButtons.length === 0) {
+        return;
+      }
+
+      const openModal = function () {
+        modal.classList.add('is-open');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      };
+
+      const closeModal = function () {
+        modal.classList.remove('is-open');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      };
+
+      openButtons.forEach(function (button) {
+        button.addEventListener('click', openModal);
+      });
+
+      closeButton.addEventListener('click', closeModal);
+
+      modal.addEventListener('click', function (event) {
+        if (event.target === modal) {
+          closeModal();
+        }
+      });
+
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape' && modal.classList.contains('is-open')) {
+          closeModal();
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
